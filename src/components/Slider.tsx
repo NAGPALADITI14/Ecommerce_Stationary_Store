@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    title: "Notebook Collections",
+    title: "NotebookCollections",
     description: "Sale! Up to 5% off!",
     img: "https://i.pinimg.com/736x/0a/d6/d4/0ad6d49291b5b646e491e858f153c573.jpg",
     url: "/",
@@ -60,7 +60,7 @@ const Slider = () => {
             key={slide.id}
           >
             {/* TEXT-CONTAINER */}
-            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12">
+            <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-4 2xl:gap-12 text-black">
               <h2 className="text-xl lg:text-3xl 2xl:text-5xl font-semibold">
                 {slide.description}
               </h2>
