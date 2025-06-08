@@ -5,8 +5,15 @@ import { dbConnect } from "@/utils/dbconnect";
 export async function POST(req: Request) {
   await dbConnect();
 
+  let body;
   try {
-    const { name, email, password } = await req.json();
+    body = await req.json();
+  } catch (err) {
+    return NextResponse.json({ message: "Invalid JSON body" }, { status: 400 });
+  }
+
+  try {
+    const { name, email, password } = body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
