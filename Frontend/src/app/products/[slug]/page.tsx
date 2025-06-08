@@ -6,7 +6,8 @@ const getProductBySlug = async (slug: string): Promise<IProduct | null> => {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   // Fallback for local development if the env var is missing
-  const apiUrl = `${baseUrl ?? "http://localhost:3000"}/api/products/${slug}`;
+  // const apiUrl = `${baseUrl ?? "http://localhost:3000"}/api/products/${slug}`;
+  const apiUrl = `/api/products/${slug}`;
 
   try {
     // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${slug}`, {
