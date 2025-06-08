@@ -16,7 +16,20 @@ const nextConfig = {
     // your project has TypeScript errors.
     ignoreBuildErrors: true,
   },
-  
+  experimental: {
+    serverComponentsExternalPackages: ['mongoose'],
+  },
+  // Enable detailed error reporting
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+  // Add logging for debugging
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
