@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useCart } from "@/context/CartContext";
-import { useOrders } from "@/context/OrderContext"; // Import the new context
+import { useOrders } from "@/context/OrderContext"; 
+import Image from 'next/image';
 
 // Types
 interface Address {
@@ -411,10 +412,12 @@ const FinalCheckoutPage: React.FC = () => {
                     {items.map((item) => (
                       <div key={item.id} className="flex gap-4 p-4 border rounded-lg">
                         {item.image ? (
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.name}
                             className="w-16 h-16 object-cover rounded-md"
+                            width={500} // <-- Add a default width
+                            height={500}
                           />
                         ) : (
                           <div className="w-16 h-16 bg-gray-200 rounded-md flex items-center justify-center">
@@ -455,10 +458,12 @@ const FinalCheckoutPage: React.FC = () => {
                       <p className="text-sm text-blue-700">Secure payment via Razorpay. Supports cards, UPI, netbanking, and wallets.</p>
                     </div>
                     <div className="ml-4">
-                      <img 
+                      <Image 
                         src="https://razorpay.com/assets/razorpay-logo.svg" 
                         alt="Razorpay" 
                         className="h-8"
+                        width={500} // <-- Add a default width
+                        height={500}
                       />
                     </div>
                   </div>

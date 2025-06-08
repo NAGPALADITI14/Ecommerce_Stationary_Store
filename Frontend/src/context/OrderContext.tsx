@@ -27,7 +27,7 @@ export interface Address {
 export interface TrackingStep {
   status: string;
   description: string;
-  timestamp: Date;
+  timestamp: string;
   completed: boolean;
 }
 
@@ -40,8 +40,8 @@ export interface Order {
   shippingCost: number;
   taxAmount: number;
   totalAmount: number;
-  orderDate: Date;
-  estimatedDelivery: Date;
+  orderDate: string;
+  estimatedDelivery: string;
   status: 'confirmed' | 'processing' | 'shipped' | 'out_for_delivery' | 'delivered';
   paymentId: string;
   trackingSteps: TrackingStep[];
@@ -78,31 +78,31 @@ const generateTrackingSteps = (orderDate: Date, estimatedDelivery: Date): Tracki
     {
       status: 'Order Confirmed',
       description: 'Your order has been confirmed and is being prepared',
-      timestamp: orderDate,
+      timestamp: orderDate.toISOString(),
       completed: true
     },
     {
       status: 'Processing',
       description: 'Your order is being processed and packed',
-      timestamp: new Date(orderDate.getTime() + (1 * 24 * 60 * 60 * 1000)), // +1 day
+      timestamp: new Date(orderDate.getTime() + (1 * 24 * 60 * 60 * 1000)).toISOString(), // +1 day
       completed: false
     },
     {
       status: 'Shipped',
       description: 'Your order has been shipped and is on its way',
-      timestamp: new Date(orderDate.getTime() + (2 * 24 * 60 * 60 * 1000)), // +2 days
+      timestamp: new Date(orderDate.getTime() + (2 * 24 * 60 * 60 * 1000)).toISOString(), // +2 days
       completed: false
     },
     {
       status: 'Out for Delivery',
       description: 'Your order is out for delivery and will arrive today',
-      timestamp: new Date(estimatedDelivery.getTime() - (1 * 24 * 60 * 60 * 1000)), // -1 day from delivery
+      timestamp: new Date(estimatedDelivery.getTime() - (1 * 24 * 60 * 60 * 1000)).toISOString(), // -1 day from delivery
       completed: false
     },
     {
       status: 'Delivered',
       description: 'Your order has been delivered successfully',
-      timestamp: estimatedDelivery,
+      timestamp: estimatedDelivery.toISOString(),
       completed: false
     }
   ];
@@ -148,7 +148,7 @@ export const OrderProvider: React.FC<{ children: ReactNode }> = ({ children }) =
       ...orderData,
       id: `order_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       orderNumber: `ORD${Date.now().toString().slice(-8)}`,
-      orderDate,
+      orderDate: orderDate.toISOString(),
       trackingSteps,
       status: 'confirmed'
     };

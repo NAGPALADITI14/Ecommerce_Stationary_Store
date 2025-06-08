@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { useCart } from "@/context/CartContext";
 import type { IProduct } from "@/models/product";
+import Image from "next/image";
 
 interface ProductPageProps {
   product: IProduct;
@@ -358,10 +359,13 @@ const MediaCarousel = ({
           <source src={currentItem.url} type="video/mp4" />
         </video>
       ) : (
-        <img
+        <Image
           src={currentItem.url}
           alt={currentItem.alt || `Product image ${current + 1}`}
           className="w-full object-contain h-[500px] transition-opacity duration-500 ease-in-out"
+          // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={500} // <-- Add a default width
+          height={500}
         />
       )}
 
