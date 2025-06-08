@@ -7,7 +7,8 @@ const getProductBySlug = async (slug: string): Promise<IProduct | null> => {
 
   // Fallback for local development if the env var is missing
   // const apiUrl = `${baseUrl ?? "http://localhost:3000"}/api/products/${slug}`;
-  const apiUrl = `/api/products/${slug}`;
+  // const apiUrl = `/api/products/${slug}`;
+  const apiUrl = `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : (baseUrl ?? "http://localhost:3000")}/api/products/${slug}`;
 
   try {
     // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products/${slug}`, {
