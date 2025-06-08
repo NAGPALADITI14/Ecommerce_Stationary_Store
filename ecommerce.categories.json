@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab2"
+  },
+  "name": "Sports",
+  "image": "https://i.pinimg.com/736x/49/ef/5e/49ef5e4670e94e49e773b7ae81601d1a.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab3"
+  },
+  "name": "Books",
+  "image": "https://i.pinimg.com/736x/be/d9/4f/bed94fbc8280f887b3d6d8cc8a75650d.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab4"
+  },
+  "name": "Notebooks",
+  "image": "https://i.pinimg.com/736x/54/df/9f/54df9fecfdc12986569f4d414d193a3f.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab5"
+  },
+  "name": "Stationery",
+  "image": "https://i.pinimg.com/736x/95/91/09/9591092c5d1393a98d9ca9643d700ca9.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab6"
+  },
+  "name": "Pens",
+  "image": "https://i.pinimg.com/736x/a7/b9/8e/a7b98e16f2f35efad353a352b98dbc52.jpg"
+},
+{
+  "_id": {
+    "$oid": "67cec2f0680784a643919ab7"
+  },
+  "name": "School Essentials",
+  "image": "https://i.pinimg.com/736x/4c/27/58/4c275881308b4ae3956c80856018a375.jpg"
+}]

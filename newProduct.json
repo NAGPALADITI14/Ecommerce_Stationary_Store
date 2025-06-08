@@ -1,0 +1,791 @@
+[
+  {
+    "productId": "SP1001",
+    "name": "Elegant Fountain Pen",
+    "description": "A stylish and timeless fountain pen featuring a precision-engineered nib that ensures smooth, uninterrupted ink flow. Crafted for both professional writing and artistic expression, its ergonomic design allows for extended use without hand fatigue. Available in elegant Gold and Silver trims with multiple ink color options, it's the perfect companion for journaling, sketching, or executive note-taking.",
+    "price": {
+      "price": 499,
+      "discountedPrice": 399
+    },
+    "stock": 200,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/53/d3/22/53d322fc89e59142814c9a54333ae75f.jpg"
+        },
+        {
+          "alt": "video",
+          "url": "https://v1.pinimg.com/videos/mc/720p/0e/8a/d9/0e8ad9862c53768fb232385f3d8d3e08.mp4"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1001A",
+        "variantName": "Gold Trim",
+        "variantPrice": 599,
+        "stock": { "quantity": 10 }
+      },
+      {
+        "variantId": "SP1001B",
+        "variantName": "Silver Trim",
+        "variantPrice": 549,
+        "stock": { "quantity": 50 }
+      }
+    ],
+    "productOptions": [
+      {
+        "optionName": "Ink Color",
+        "optionValues": "Black"
+      },
+      {
+        "optionName": "Ink Color",
+        "optionValues": "Blue"
+      },
+      {
+        "optionName": "Ink Color",
+        "optionValues": "Green"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "title": "Nib Type",
+        "description": "Nib Type: Stainless steel nib for a smooth and consistent writing experience."
+      }
+    ],
+
+    "category": "Pens",
+    "slug": "elegant-fountain-pen",
+    "isLatest": false
+  },
+
+  {
+    "productId": "SP1000",
+    "name": "Champion Football Notebook",
+    "description": "A premium football-themed notebook for sports lovers. Features high-quality ruled pages and a durable cover.A must-have for every football enthusiast, this premium A5 notebook showcases a dynamic football-themed design with a tough hardcover to protect your notes. Filled with 100 GSM acid-free, ruled pages that are perfect for everyday writing, journaling, or planning match strategies. Ideal for students, fans, or anyone who lives and breathes the game.",
+    "price": {
+      "price": 299,
+      "discountedPrice": 249
+    },
+    "stock": 50,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/d6/a8/f6/d6a8f6412de63554f170da85dba81c38.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1000A",
+        "variantName": "Hardcover",
+        "variantPrice": 349,
+        "stock": { "quantity": 100 }
+      }
+    ],
+    "productOptions": [
+      {
+        "optionName": "Size",
+        "optionValues": "A5"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "100 GSM acid-free paper for smooth writing."
+      }
+    ],
+
+    "category": "Sports",
+    "slug": "champion-football-notebook",
+    "isLatest": true
+  },
+
+  {
+    "productId": "SP1002",
+    "name": "Adidas FIFA World Cup Football",
+    "description": "A high-quality FIFA-approved football with a durable PU exterior and excellent grip.Experience the thrill of the game with this FIFA-approved Adidas World Cup Football. Constructed with high-grade synthetic leather and reinforced stitching for exceptional durability, it provides superior grip and consistent flight. Perfect for competitive matches or practice, this Size 5 ball is engineered to perform in all weather conditions.",
+    "price": {
+      "price": 1999,
+      "discountedPrice": 1799
+    },
+    "stock": 50,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/55/48/57/5548572f040a9f940389b3e467f99288.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1002A",
+        "variantName": "Size 5",
+        "variantPrice": 1999,
+        "stock": { "quantity": 10 }
+      }
+    ],
+    "productOptions": [
+      {
+        "optionName": "Color",
+        "optionValues": "Blue"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Material: High-quality synthetic leather with reinforced stitching."
+      }
+    ],
+
+    "category": "Sports",
+    "slug": "adidas-fifa-world-cup-football",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1003",
+    "name": "SG Complete Cricket Kit",
+    "description": "A full cricket kit including a bat, gloves, leg pads, and a helmet for aspiring cricketers.Step onto the field fully equipped with this SG Complete Cricket Kit, tailored for budding cricketers. The kit includes a high-quality English Willow bat, protective gloves, leg pads, a sturdy helmet, and a convenient carrying bag. Designed with comfort and safety in mind, it's an ideal starter pack for youth players and cricket academies.",
+    "price": {
+      "price": 4999,
+      "discountedPrice": 4499
+    },
+    "stock": 30,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/6a/80/cf/6a80cfe782e985a44f337ffc6763ebe7.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/84/74/e9/8474e957e659f95e018e06ea84164fc8.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/2d/f4/80/2df480e8b673cda2ce982c6325b4b596.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1003A",
+        "variantName": "Youth Size",
+        "variantPrice": 4799,
+        "stock": { "quantity": 10 }
+      }
+    ],
+    "productOptions": [
+      {
+        "optionName": "Bat Type",
+        "optionValues": "English Willow"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Inclusions: Includes a premium bat, gloves, helmet, pads, and a carrying bag."
+      }
+    ],
+
+    "category": "Sports",
+    "slug": "sg-complete-cricket-kit",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1004",
+    "name": "Classic Leather Notebook",
+    "description": "A refined notebook for professionals and creatives alike, this Classic Leather Notebook is encased in a hand-stitched black leather cover that exudes sophistication. With ruled pages made from high-quality, acid-free paper, it offers a smooth writing experience. Ideal for journaling, business notes, or sketching on the go.",
+    "price": {
+      "price": 899,
+      "discountedPrice": 749
+    },
+    "stock": 100,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/c8/d4/39/c8d43963071918a7f00ac1166786d48c.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1004A",
+        "variantName": "Ruled Page",
+        "variantPrice": 799,
+        "stock": { "quantity": 30 }
+      }
+    ],
+    "productOptions": [
+      {
+        "optionName": "Color",
+        "optionValues": "Black"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Hand-stitched leather cover for durability and elegance."
+      }
+    ],
+
+    "category": "Notebooks",
+    "slug": "classic-leather-notebook",
+    "isLatest": false
+  },
+
+  {
+    "productId": "SP1005",
+    "name": "Parker Jotter Gel Pen",
+    "description": "A premium stainless steel gel pen with a smooth writing experience.Combining style and performance, the Parker Jotter Gel Pen is crafted from polished stainless steel for a premium look and feel. Its quick-drying gel ink provides a fluid and smudge-free writing experience, while the refillable design ensures long-term use. Perfect for everyday writing or gifting.",
+    "price": {
+      "price": 599,
+      "discountedPrice": 499
+    },
+    "stock": 80,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/35/25/c6/3525c63822b7f6a0cfb2fc5f94b23251.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/35/25/c6/3525c63822b7f6a0cfb2fc5f94b23251.jpg"
+        }
+      ]
+    },
+    "productOptions": [
+      {
+        "optionName": "Ink Color",
+        "optionValues": "Black"
+      },
+      {
+        "optionName": "Ink Color",
+        "optionValues": "Blue"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Refillable: Compatible with Parker gel refills."
+      }
+    ],
+
+    "category": "Pens",
+    "slug": "parker-jotter-gel-pen",
+    "isLatest": true
+  },
+
+  {
+    "productId": "SP1005",
+    "name": "Pilot G2 Retractable Gel Pen",
+    "description": "A smooth-flowing gel pen with ergonomic grip for comfortable writing.Trusted by professionals and students alike, the Pilot G2 Gel Pen delivers exceptional smoothness and control. Its 0.7mm tip glides effortlessly on the page, while the soft ergonomic grip reduces strain during long writing sessions. With quick-drying ink and a retractable design, it's a reliable tool for note-taking or journaling.",
+    "price": {
+      "price": 299,
+      "discountedPrice": 249
+    },
+    "stock": 120,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/a3/2e/a7/a32ea7148f77961d151622864b8ce73b.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/fc/15/26/fc1526138f5fa3c1da569c561c09ecb1.jpg"
+        }
+      ]
+    },
+
+    "productOptions": [
+      {
+        "optionName": "Tip Size",
+        "optionValues": "0.7mm"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Ink Type: Quick-drying gel ink, ideal for left-handed users."
+      }
+    ],
+
+    "category": "Pens",
+    "slug": "pilot-g2-gel-pen",
+    "isLatest": false
+  },
+
+  {
+    "productId": "SP1006",
+    "name": "Moleskine Classic Notebook",
+    "description": "A premium ruled notebook with an elegant hardcover and thick pages.The Moleskine Classic Notebook represents timeless Italian design with unmatched paper quality. Encased in a durable hard cover, it features 120 GSM acid-free paper that resists ink bleed, making it fountain pen-friendly. Available in both A4 and A5 sizes, it's perfect for sketches, ideas, or business planning.",
+    "price": {
+      "price": 1299,
+      "discountedPrice": 1099
+    },
+    "stock": 60,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/2c/3b/48/2c3b4856fdfa4c59928455b5b52d69f7.jpg"
+        },
+        {
+          "alt": "video",
+          "url": "https://v1.pinimg.com/videos/mc/720p/b3/f2/3a/b3f23ab9c7c36e86e3b98c6891c850cf.mp4"
+        }
+      ]
+    },
+    "productOptions": [
+      {
+        "optionName": "Size",
+        "optionValues": "A5"
+      },
+      {
+        "optionName": "Size",
+        "optionValues": "A4"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Paper Type: 120 GSM acid-free paper, perfect for fountain pens."
+      }
+    ],
+
+    "category": "Notebooks",
+    "slug": "moleskine-classic-notebook",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1007",
+    "name": "Five Star Spiral Notebook",
+    "description": "Organize your notes with the Five Star Spiral Notebook, featuring a twin-wire binding that ensures durability and easy page-turning. Its thick, high-quality pages reduce ink bleed, and it comes in multiple vibrant cover colors including Black, Blue, and Red. Perfect for students, professionals, and creative writers.",
+    "price": {
+      "price": 699,
+      "discountedPrice": 599
+    },
+    "stock": 200,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/66/39/af/6639af2df3a1b70054ba9e0ac9390c89.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/41/15/08/4115082a43204579be7463d30196eb2b.jpg"
+        }
+      ]
+    },
+
+    "productOptions": [
+      {
+        "optionName": "Cover Color",
+        "optionValues": "Black"
+      },
+      {
+        "optionName": "Cover Color",
+        "optionValues": "Blue"
+      },
+      {
+        "optionName": "Cover Color",
+        "optionValues": "Red"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Binding Type: Twin-wire binding for durability."
+      }
+    ],
+
+    "category": "Notebooks",
+    "slug": "five-star-spiral-notebook",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1008",
+    "name": "The Psychology of Money",
+    "description": "A bestselling book on personal finance and wealth-building habits.Written by Morgan Housel, The Psychology of Money explores the emotional and psychological side of finance. Through engaging storytelling, it reveals how mindset and behavior play a pivotal role in building wealth. A must-read for anyone seeking lasting financial wisdom. Available in hardcover and paperback formats.",
+    "price": {
+      "price": 499,
+      "discountedPrice": 399
+    },
+    "stock": 150,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/78/84/0b/78840b37e1f570b4f80ac9589f2bf842.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/6d/1e/e6/6d1ee6d893a9eb15f70bdfb4deead4b0.jpg"
+        }
+      ]
+    },
+
+    "productOptions": [
+      {
+        "optionName": "Format",
+        "optionValues": "Hardcover"
+      },
+      {
+        "optionName": "Format",
+        "optionValues": "Paperback"
+      }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Author: Morgan Housel"
+      }
+    ],
+
+    "category": "Books",
+    "slug": "the-psychology-of-money",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1009",
+    "name": "Lamy Safari Fountain Pen",
+    "description": "A modern icon in the world of writing, the Lamy Safari Fountain Pen features a lightweight ABS plastic body, ergonomic grip, and smooth stainless steel nib. Ideal for daily writing and calligraphy.A modern icon in the world of writing, the Lamy Safari Fountain Pen features a lightweight ABS plastic body, ergonomic grip, and smooth stainless steel nib. Perfectly balanced for effortless writing over long sessions, it supports both cartridges and converters, making it versatile for calligraphy, journaling, or school notes. Its sleek design and practical durability have made it a global favorite among students and professionals alike",
+    "price": {
+      "price": 1499,
+      "discountedPrice": 1299
+    },
+    "stock": 80,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/09/9c/de/099cdebf3a92e0887a2acf864b76bfdd.jpg"
+        },
+        {
+          "alt": "video",
+          "url": "https://v1.pinimg.com/videos/mc/720p/56/d5/84/56d58426d85ada4d12c022a5af10d783.mp4"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/e1/88/b5/e188b55f3e55a3af88bb2f3bf5cbe6ee.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1009A",
+        "variantName": "Charcoal Black",
+        "variantPrice": 1299,
+        "stock": { "quantity": 20 }
+      }
+    ],
+    "productOptions": [
+      { "optionName": "Ink Color", "optionValues": "Black" },
+      { "optionName": "Ink Color", "optionValues": "Blue" }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Refillable with Lamy ink cartridges or converter. Ideal for beginners and enthusiasts alike."
+      }
+    ],
+    "category": "Pens",
+    "slug": "lamy-safari-fountain-pen",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1010",
+    "name": "Classmate Pulse Spiral Notebook",
+    "description": "This spiral notebook features 300 ruled pages with superior brightness and smooth texture. Designed with a colorful cover and metal wire binding for hassle-free flipping.Designed for both creativity and productivity, this spiral notebook features 300 high-quality ruled pages with exceptional brightness. The durable laminated cover sports vibrant artwork while the strong double-wire binding ensures smooth flipping without page damage. Whether used for school notes, bullet journaling, or sketch planning, it offers a reliable platform for all your thoughts and ideas.",
+    "price": {
+      "price": 199,
+      "discountedPrice": 179
+    },
+    "stock": 150,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/29/1c/ec/291cec4b46a4a93d5efb2544b3ac36f2.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/8a/f4/c1/8af4c161fa04905bb8478f68309cfd01.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/98/13/67/981367e0d8eafb818a488f03ccd62aa5.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1010A",
+        "variantName": "Green Cover",
+        "variantPrice": 179,
+        "stock": { "quantity": 70 }
+      }
+    ],
+    "productOptions": [{ "optionName": "Size", "optionValues": "A5" }],
+    "additionalInfoSections": [
+      {
+        "description": "Paper Quality: 70 GSM acid-free paper with micro-perforations for easy tear."
+      }
+    ],
+    "category": "Notebooks",
+    "slug": "classmate-pulse-spiral-notebook",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1011",
+    "name": "Wilson NCAA Replica Basketball",
+    "description": "This high-performance basketball is crafted from composite leather, offering excellent grip and durability. Suitable for both indoor and outdoor courts.Crafted for aspiring athletes, this high-performance Wilson NCAA Replica Basketball delivers pro-level control and comfort. Its durable composite leather construction offers excellent grip on both wooden indoor courts and rugged outdoor surfaces. With deep pebbled channels and superior air retention, this basketball ensures precision handling during practice or competitive matches",
+    "price": {
+      "price": 1799,
+      "discountedPrice": 1599
+    },
+    "stock": 40,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/df/14/49/df14498df2647532e1e3029c0c3d9b90.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/40/07/43/400743d4478222c8475f4bac825a8c71.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1011A",
+        "variantName": "Size 7",
+        "variantPrice": 1599,
+        "stock": { "quantity": 10 }
+      }
+    ],
+    "productOptions": [{ "optionName": "Color", "optionValues": "Orange" }],
+    "additionalInfoSections": [
+      {
+        "description": "Grip Channels: Deep channels for better ball control during dribbling."
+      }
+    ],
+    "category": "Sports",
+    "slug": "wilson-ncaa-replica-basketball",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1012",
+    "name": "DSC Intense Cricket Bat",
+    "description": "Made from Grade 3 English Willow, this cricket bat is designed for power hitters. Lightweight profile and thick edges ensure explosive strokes.The DSC Intense Cricket Bat is a top-tier sports tool made from Grade 3 English Willow for exceptional power and balance. Built for aggressive stroke play, it features thick edges, a curved blade, and a light pickup for fast reaction time. Ideal for club matches and net practice, it also includes a protective toe guard and comes pre-knocked with a cushioned grip for confident handling.",
+    "price": {
+      "price": 3499,
+      "discountedPrice": 3199
+    },
+    "stock": 25,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/a0/bf/8a/a0bf8ad40519cc94921400348a21899f.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/474x/d8/b2/fa/d8b2fa457225af40708cfcacb7cba914.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1012A",
+        "variantName": "Short Handle",
+        "variantPrice": 3199,
+        "stock": { "quantity": 10 }
+      }
+    ],
+    "productOptions": [
+      { "optionName": "Bat Size", "optionValues": "Full Size" }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Comes with a toe guard and a premium carry cover."
+      }
+    ],
+    "category": "Sports",
+    "slug": "dsc-intense-cricket-bat",
+    "isLatest": false
+  },
+  {
+    "productId": "SP1013",
+    "name": "Camlin Kokuyo Fountain Pen",
+    "description": "A reliable everyday fountain pen with a fine nib and sleek plastic body. Offers effortless ink flow and great grip for young writers.An excellent beginner's fountain pen, the Camlin Kokuyo delivers a smooth writing experience with a fine nib and comfortable plastic body. Lightweight yet sturdy, it promotes proper grip and control, especially for students or young writers. Its ergonomic barrel design and easy cartridge refilling system make it a practical and affordable tool for everyday writing needs.",
+    "price": {
+      "price": 249,
+      "discountedPrice": 199
+    },
+    "stock": 300,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/c2/4d/7a/c24d7a0a832e369a46e8853fdcb1691a.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/47/a1/b0/47a1b0ff05ce7d4dd014c4f1f7dc9786.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1013A",
+        "variantName": "Blue Body",
+        "variantPrice": 199,
+        "stock": { "quantity": 100 }
+      }
+    ],
+    "productOptions": [{ "optionName": "Ink Color", "optionValues": "Blue" }],
+    "additionalInfoSections": [
+      {
+        "description": "Includes 2 free ink cartridges in the pack."
+      }
+    ],
+    "category": "Pens",
+    "slug": "camlin-kokuyo-fountain-pen",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1014",
+    "name": "Navneet A4 Executive Notebook",
+    "description": "Perfect for office meetings and executive use, this notebook features hardbound covers with high-quality ruled sheets for clean documentation.Crafted for professionals, the Navneet Executive Notebook features premium 70 GSM ruled paper enclosed in a hardbound cover with a refined matte finish. Ideal for business meetings, legal documentation, or academic planning, its large A4 pages offer ample space for structured note-taking, while the sturdy binding ensures longevity and neatness.",
+    "price": {
+      "price": 399,
+      "discountedPrice": 349
+    },
+    "stock": 100,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/e6/e8/c1/e6e8c144a786bca3e0edb3e2c7b9d42e.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1014A",
+        "variantName": "Ruled",
+        "variantPrice": 349,
+        "stock": { "quantity": 40 }
+      }
+    ],
+    "productOptions": [{ "optionName": "Size", "optionValues": "A4" }],
+    "additionalInfoSections": [
+      {
+        "description": "120 pages, thick cover with elegant professional design."
+      }
+    ],
+    "category": "Notebooks",
+    "slug": "navneet-executive-notebook",
+    "isLatest": false
+  },
+  {
+    "productId": "SP1015",
+    "name": "Kookaburra Turf Cricket Ball",
+    "description": "A premium red leather cricket ball for practice and match play. Hand-stitched with durable seams and center core construction.The Kookaburra Turf Cricket Ball is engineered for serious practice and match conditions. Hand-stitched using premium red leather and a robust central core, it delivers consistent bounce, swing, and seam movement. A favorite among seasoned players, it holds shape well over extended use and is suitable for both club-level and school-level cricket formats.",
+    "price": {
+      "price": 999,
+      "discountedPrice": 899
+    },
+    "stock": 60,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/f3/4b/24/f34b24dc523fd2a5a2029bea29afbe93.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/14/2c/21/142c2117d11733019100bd48bbbb0306.jpg"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "variantId": "SP1015A",
+        "variantName": "Red",
+        "variantPrice": 899,
+        "stock": { "quantity": 20 }
+      }
+    ],
+    "productOptions": [{ "optionName": "Weight", "optionValues": "156g" }],
+    "additionalInfoSections": [
+      {
+        "description": "Test match quality ball approved for club cricket use."
+      }
+    ],
+    "category": "Sports",
+    "slug": "kookaburra-turf-ball",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1016",
+    "name": "Atomic Habits by James Clear",
+    "description": "A transformative guide to building good habits and breaking bad ones. Includes practical strategies backed by neuroscience and psychology.This international bestseller by James Clear offers a powerful blueprint for achieving long-term success through small, incremental changes. Drawing on neuroscience and behavioral psychology, 'Atomic Habits' breaks down how habits are formed, why they stick, and how to replace bad routines with positive ones. Ideal for anyone looking to improve productivity, health, or mindset through science-backed techniques.",
+    "price": {
+      "price": 699,
+      "discountedPrice": 599
+    },
+    "stock": 180,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/39/d9/d6/39d9d620d911c59cddd87302a2810bc3.jpg"
+        },
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/d2/78/59/d27859c6c2ec35da4d27b56bfebd692f.jpg"
+        }
+      ]
+    },
+    "productOptions": [
+      { "optionName": "Format", "optionValues": "Paperback" },
+      { "optionName": "Format", "optionValues": "Hardcover" }
+    ],
+    "additionalInfoSections": [
+      {
+        "description": "Author: James Clear"
+      }
+    ],
+    "category": "Books",
+    "slug": "atomic-habits",
+    "isLatest": true
+  },
+  {
+    "productId": "SP1017",
+    "name": "Inkredible Gel Pen Set",
+    "description": "A set of 5 vibrant gel pens with quick-dry ink and cushioned grips. Perfect for journaling, exams, or sketching.Bring your notes and art to life with the Inkredible Gel Pen Set. This pack includes five pens filled with fast-drying, smudge-resistant gel ink in rich, vibrant colors. Designed with ergonomic grips and fine 0.5mm tips, they're perfect for detailed writing, exams, color-coding, and sketching. Ideal for students, planners, and creative professionals.",
+    "price": {
+      "price": 349,
+      "discountedPrice": 299
+    },
+    "stock": 100,
+    "media": {
+      "items": [
+        {
+          "alt": "image",
+          "url": "https://i.pinimg.com/736x/58/7d/b6/587db637465227a7a18ad2b2f9d571db.jpg"
+        }
+      ]
+    },
+    "variants": [],
+    "productOptions": [{ "optionName": "Pack Size", "optionValues": "5 Pens" }],
+    "additionalInfoSections": [
+      {
+        "description": "Includes Black, Blue, Red, Green, and Purple inks."
+      }
+    ],
+    "category": "Pens",
+    "slug": "inkredible-gel-pen-set",
+    "isLatest": true
+  }
+]
