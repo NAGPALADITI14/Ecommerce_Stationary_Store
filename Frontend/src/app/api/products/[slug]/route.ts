@@ -76,6 +76,73 @@
 
 
 
+// import { NextResponse } from "next/server";
+// import { dbConnect } from "@/utils/dbconnect";
+// import Product from "@/models/product";
+
+// export async function GET(
+//   req: Request,
+//   context: { params: Promise<{ slug: string }> }
+// ) {
+//   try {
+//     console.log("API: Starting product fetch"); // Add debugging
+    
+//     await dbConnect();
+//     console.log("API: Database connected"); // Add debugging
+    
+//     // Await the params - this is the key change for Next.js 15+
+//     const params = await context.params;
+//     const { slug } = params;
+    
+//     console.log("API: Received slug:", slug); // Debug logging
+    
+//     if (!slug) {
+//       console.log("API: Slug is missing");
+//       return NextResponse.json({ 
+//         success: false, 
+//         error: "Slug is missing" 
+//       }, { status: 400 });
+//     }
+
+//     // URL decode the slug in case it contains special characters
+//     const decodedSlug = decodeURIComponent(slug);
+//     console.log("API: Decoded slug:", decodedSlug);
+
+//     const product = await Product.findOne({ slug: decodedSlug });
+//     console.log("API: Database query result:", product ? "Found" : "Not found");
+
+//     if (!product) {
+//       console.log("API: Product not found for slug:", decodedSlug);
+//       return NextResponse.json({ 
+//         success: false, 
+//         error: "Product not found" 
+//       }, { status: 404 });
+//     }
+
+//     return NextResponse.json({ 
+//       success: true, 
+//       product 
+//     }, {
+//       // Add CORS headers if needed
+//       headers: {
+//         'Access-Control-Allow-Origin': '*',
+//         'Access-Control-Allow-Methods': 'GET',
+//         'Access-Control-Allow-Headers': 'Content-Type',
+//       }
+//     });
+//   } catch (error) {
+//     console.error("API: Error occurred:", error);
+//     return NextResponse.json({
+//       success: false,
+//       error: error instanceof Error ? error.message : "An unknown error occurred",
+//     }, { status: 500 });
+//   }
+// }
+
+
+
+
+
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/utils/dbconnect";
 import Product from "@/models/product";
@@ -84,59 +151,131 @@ export async function GET(
   req: Request,
   context: { params: Promise<{ slug: string }> }
 ) {
+  const startTime = Date.now();
+  
   try {
-    console.log("API: Starting product fetch"); // Add debugging
+    console.log("=== API ROUTE DEBUG START ===");
+    console.log("Request URL:", req.url);
+    console.log("Request method:", req.method);
+    console.log("Headers:", Object.fromEntries(req.headers.entries()));
     
+    // Connect to database
+    console.log("Connecting to database...");
     await dbConnect();
-    console.log("API: Database connected"); // Add debugging
+    console.log("Database connected successfully");
     
-    // Await the params - this is the key change for Next.js 15+
+    // Get params
+    console.log("Resolving params...");
     const params = await context.params;
+    console.log("Raw params:", params);
+    
     const { slug } = params;
+    console.log("Extracted slug:", slug);
+    console.log("Slug type:", typeof slug);
+    console.log("Slug length:", slug?.length);
     
-    console.log("API: Received slug:", slug); // Debug logging
-    
+    // Validate slug
     if (!slug) {
-      console.log("API: Slug is missing");
+      console.error("❌ Slug validation failed: slug is falsy");
       return NextResponse.json({ 
         success: false, 
-        error: "Slug is missing" 
+        error: "Slug parameter is required",
+        debug: {
+          receivedSlug: slug,
+          slugType: typeof slug,
+          params: params
+        }
       }, { status: 400 });
     }
-
-    // URL decode the slug in case it contains special characters
-    const decodedSlug = decodeURIComponent(slug);
-    console.log("API: Decoded slug:", decodedSlug);
-
-    const product = await Product.findOne({ slug: decodedSlug });
-    console.log("API: Database query result:", product ? "Found" : "Not found");
-
-    if (!product) {
-      console.log("API: Product not found for slug:", decodedSlug);
+    
+    if (typeof slug !== 'string') {
+      console.error("❌ Slug validation failed: slug is not a string");
       return NextResponse.json({ 
         success: false, 
-        error: "Product not found" 
+        error: "Slug must be a string",
+        debug: {
+          receivedSlug: slug,
+          slugType: typeof slug
+        }
+      }, { status: 400 });
+    }
+    
+    if (slug.trim().length === 0) {
+      console.error("❌ Slug validation failed: slug is empty");
+      return NextResponse.json({ 
+        success: false, 
+        error: "Slug cannot be empty",
+        debug: {
+          receivedSlug: slug,
+          slugLength: slug.length
+        }
+      }, { status: 400 });
+    }
+    
+    // Process slug
+    const decodedSlug = decodeURIComponent(slug.trim());
+    console.log("Decoded slug:", decodedSlug);
+    
+    // Query database
+    console.log("Querying database for slug:", decodedSlug);
+    const product = await Product.findOne({ slug: decodedSlug });
+    console.log("Database query completed");
+    console.log("Product found:", !!product);
+    
+    if (product) {
+      console.log("Product ID:", product._id);
+      console.log("Product name:", product.name);
+    }
+
+    if (!product) {
+      console.log("❌ Product not found for slug:", decodedSlug);
+      
+      // Additional debugging: check similar slugs
+      const similarProducts = await Product.find({
+        slug: { $regex: decodedSlug.substring(0, 10), $options: 'i' }
+      }).limit(5).select('slug name');
+      
+      console.log("Similar products found:", similarProducts.length);
+      similarProducts.forEach(p => console.log("Similar slug:", p.slug));
+      
+      return NextResponse.json({ 
+        success: false, 
+        error: "Product not found",
+        debug: {
+          searchedSlug: decodedSlug,
+          originalSlug: slug,
+          similarSlugs: similarProducts.map(p => p.slug)
+        }
       }, { status: 404 });
     }
 
+    const responseTime = Date.now() - startTime;
+    console.log(`✅ Success! Response time: ${responseTime}ms`);
+    console.log("=== API ROUTE DEBUG END ===");
+
     return NextResponse.json({ 
       success: true, 
-      product 
-    }, {
-      // Add CORS headers if needed
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET',
-        'Access-Control-Allow-Headers': 'Content-Type',
+      product,
+      debug: {
+        responseTime: `${responseTime}ms`,
+        slug: decodedSlug
       }
     });
+    
   } catch (error) {
-    console.error("API: Error occurred:", error);
+    const responseTime = Date.now() - startTime;
+    console.error("❌ API ERROR:", error);
+    console.error("Error stack:", error instanceof Error ? error.stack : 'No stack trace');
+    console.error("Response time:", `${responseTime}ms`);
+    console.log("=== API ROUTE DEBUG END (ERROR) ===");
+    
     return NextResponse.json({
       success: false,
       error: error instanceof Error ? error.message : "An unknown error occurred",
+      debug: {
+        errorType: error instanceof Error ? error.constructor.name : typeof error,
+        responseTime: `${responseTime}ms`
+      }
     }, { status: 500 });
   }
 }
-
-

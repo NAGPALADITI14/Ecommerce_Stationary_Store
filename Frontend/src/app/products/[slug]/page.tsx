@@ -3,60 +3,171 @@ import ProductPage from "@/components/Productpage";
 import { IProduct } from "@/models/product";
 
 const getProductBySlug = async (slug: string): Promise<IProduct | null> => {
-  // For production deployment, use absolute URL construction
+  console.log("=== CLIENT FETCH DEBUG START ===");
+  console.log("Input slug:", slug);
+  console.log("Slug type:", typeof slug);
+  console.log("Slug length:", slug?.length);
+  
+  // Validate input
+  if (!slug || typeof slug !== 'string' || slug.trim().length === 0) {
+    console.error("❌ Invalid slug provided to getProductBySlug");
+    return null;
+  }
+  
   const getBaseUrl = () => {
-    // If running on Vercel, use the deployment URL
     if (process.env.VERCEL_URL) {
       return `https://${process.env.VERCEL_URL}`;
     }
-    // If NEXT_PUBLIC_API_BASE_URL is set, use it
     if (process.env.NEXT_PUBLIC_API_BASE_URL) {
       return process.env.NEXT_PUBLIC_API_BASE_URL;
     }
-    // Fallback for local development
     return 'http://localhost:3000';
   };
 
   const baseUrl = getBaseUrl();
-  const apiUrl = `${baseUrl}/api/products/${slug}`;
+  const cleanSlug = slug.trim();
+  const apiUrl = `${baseUrl}/api/products/${encodeURIComponent(cleanSlug)}`;
   
-  console.log("Fetching from URL:", apiUrl); // Add debugging
+  console.log("Base URL:", baseUrl);
+  console.log("Clean slug:", cleanSlug);
+  console.log("Full API URL:", apiUrl);
 
   try {
+    console.log("Making fetch request...");
     const res = await fetch(apiUrl, { 
       cache: "no-store",
-      // Add headers for better compatibility
       headers: {
         'Content-Type': 'application/json',
+        'User-Agent': 'NextJS-App'
       }
     });
     
-    console.log("Response status:", res.status); // Add debugging
+    console.log("Response received:");
+    console.log("Status:", res.status);
+    console.log("Status text:", res.statusText);
+    console.log("Headers:", Object.fromEntries(res.headers.entries()));
     
     if (!res.ok) {
-      console.error(`Failed to fetch product: ${res.status} ${res.statusText}`);
+      console.error(`❌ HTTP Error: ${res.status} ${res.statusText}`);
+      
+      // Try to get error details
+      const errorText = await res.text();
+      console.error("Error response body:", errorText);
+      
+      try {
+        const errorJson = JSON.parse(errorText);
+        console.error("Parsed error:", errorJson);
+      } catch (e) {
+        console.error("Could not parse error as JSON");
+      }
+      
       return null;
     }
 
     const data = await res.json();
-    console.log("Response data:", data); // Add debugging
+    console.log("✅ Success! Response data keys:", Object.keys(data));
+    console.log("Response success:", data.success);
+    console.log("Product exists:", !!data.product);
+    console.log("=== CLIENT FETCH DEBUG END ===");
     
     return data.product || null;
   } catch (error) {
-    console.error("Failed to fetch product:", error);
+    console.error("❌ Fetch error:", error);
+    console.error("Error type:", error instanceof Error ? error.constructor.name : typeof error);
+    if (error instanceof Error) {
+      console.error("Error message:", error.message);
+      console.error("Error stack:", error.stack);
+    }
+    console.log("=== CLIENT FETCH DEBUG END (ERROR) ===");
     return null;
   }
 };
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  // Await params if they're a Promise (Next.js 15+ behavior)
+  console.log("=== PAGE COMPONENT DEBUG ===");
+  console.log("Raw params:", params);
+  
   const resolvedParams = await Promise.resolve(params);
+  console.log("Resolved params:", resolvedParams);
+  console.log("Slug from params:", resolvedParams.slug);
+  
   const product = await getProductBySlug(resolvedParams.slug);
+  console.log("Final product result:", !!product);
 
-  if (!product) return notFound();
+  if (!product) {
+    console.log("Product not found, returning 404");
+    return notFound();
+  }
 
+  console.log("Rendering ProductPage component");
   return <ProductPage product={product} />;
 }
+
+
+
+
+
+
+
+// import { notFound } from "next/navigation";
+// import ProductPage from "@/components/Productpage"; 
+// import { IProduct } from "@/models/product";
+
+// const getProductBySlug = async (slug: string): Promise<IProduct | null> => {
+//   // For production deployment, use absolute URL construction
+//   const getBaseUrl = () => {
+//     // If running on Vercel, use the deployment URL
+//     if (process.env.VERCEL_URL) {
+//       return `https://${process.env.VERCEL_URL}`;
+//     }
+//     // If NEXT_PUBLIC_API_BASE_URL is set, use it
+//     if (process.env.NEXT_PUBLIC_API_BASE_URL) {
+//       return process.env.NEXT_PUBLIC_API_BASE_URL;
+//     }
+//     // Fallback for local development
+//     return 'http://localhost:3000';
+//   };
+
+//   const baseUrl = getBaseUrl();
+//   const apiUrl = `${baseUrl}/api/products/${slug}`;
+  
+//   console.log("Fetching from URL:", apiUrl); // Add debugging
+
+//   try {
+//     const res = await fetch(apiUrl, { 
+//       cache: "no-store",
+//       // Add headers for better compatibility
+//       headers: {
+//         'Content-Type': 'application/json',
+//       }
+//     });
+    
+//     console.log("Response status:", res.status); // Add debugging
+    
+//     if (!res.ok) {
+//       console.error(`Failed to fetch product: ${res.status} ${res.statusText}`);
+//       return null;
+//     }
+
+//     const data = await res.json();
+//     console.log("Response data:", data); // Add debugging
+    
+//     return data.product || null;
+//   } catch (error) {
+//     console.error("Failed to fetch product:", error);
+//     return null;
+//   }
+// };
+
+// export default async function Page({ params }: { params: { slug: string } }) {
+//   // Await params if they're a Promise (Next.js 15+ behavior)
+//   const resolvedParams = await Promise.resolve(params);
+//   const product = await getProductBySlug(resolvedParams.slug);
+
+//   if (!product) return notFound();
+
+//   return <ProductPage product={product} />;
+// }
 
 
 
