@@ -285,181 +285,88 @@
 
 
 
-import { NextRequest, NextResponse } from "next/server";
-import { dbConnect } from "@/utils/dbconnect";
-import Product from "@/models/product";
-
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { slug: string } }
-) {
-  // Add CORS headers
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Content-Type': 'application/json',
-  };
-
-  try {
-    console.log("=== API ROUTE DEBUG START ===");
-    console.log("Request method:", request.method);
-    console.log("Request URL:", request.url);
-    console.log("Raw params:", params);
-    
-    const resolvedParams = await Promise.resolve(params);
-    const slug = resolvedParams.slug;
-    
-    console.log("Resolved slug:", slug);
-    console.log("Slug type:", typeof slug);
-    
-    if (!slug || typeof slug !== 'string') {
-      console.error("❌ Invalid slug");
-      return NextResponse.json(
-        { success: false, error: "Invalid slug parameter" },
-        { status: 400, headers }
-      );
-    }
-
-    console.log("Connecting to database...");
-    await dbConnect();
-    console.log("✅ Database connected");
-
-    console.log("Searching for product with slug:", slug);
-    const product = await Product.findOne({ slug: slug.toLowerCase() });
-    console.log("Database query result:", !!product);
-    
-    if (!product) {
-      console.log("❌ Product not found");
-      return NextResponse.json(
-        { success: false, error: "Product not found" },
-        { status: 404, headers }
-      );
-    }
-
-    console.log("✅ Product found, returning data");
-    console.log("=== API ROUTE DEBUG END ===");
-    
-    return NextResponse.json(
-      { success: true, product },
-      { status: 200, headers }
-    );
-    
-  } catch (error) {
-    console.error("❌ API Route Error:", error);
-    console.error("Error type:", error instanceof Error ? error.constructor.name : typeof error);
-    
-    if (error instanceof Error) {
-      console.error("Error message:", error.message);
-      console.error("Error stack:", error.stack);
-    }
-    
-    return NextResponse.json(
-      { 
-        success: false, 
-        error: "Internal server error",
-        details: error instanceof Error ? error.message : "Unknown error"
-      },
-      { status: 500, headers }
-    );
-  }
-}
-
-// Handle preflight requests
-export async function OPTIONS(request: NextRequest) {
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    },
-  });
-}
-
-
-
-
-
-
-// import { NextResponse } from "next/server";
+// import { NextRequest, NextResponse } from "next/server";
 // import { dbConnect } from "@/utils/dbconnect";
 // import Product from "@/models/product";
 
 // export async function GET(
-//   req: Request,
-//   context: { params: Promise<{ slug: string }> }
+//   request: NextRequest,
+//   { params }: { params: { slug: string } }
 // ) {
-//   // Add CORS headers to handle cross-origin requests
-//   const corsHeaders = {
+//   // Add CORS headers
+//   const headers = {
 //     'Access-Control-Allow-Origin': '*',
 //     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
 //     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-//     'Cache-Control': 'no-cache, no-store, must-revalidate',
+//     'Content-Type': 'application/json',
 //   };
 
 //   try {
-//     console.log("=== API ROUTE START ===");
-//     console.log("Request URL:", req.url);
-//     console.log("Request headers:", Object.fromEntries(req.headers.entries()));
+//     console.log("=== API ROUTE DEBUG START ===");
+//     console.log("Request method:", request.method);
+//     console.log("Request URL:", request.url);
+//     console.log("Raw params:", params);
     
-//     await dbConnect();
-//     console.log("Database connected");
+//     const resolvedParams = await Promise.resolve(params);
+//     const slug = resolvedParams.slug;
     
-//     const params = await context.params;
-//     const { slug } = params;
+//     console.log("Resolved slug:", slug);
+//     console.log("Slug type:", typeof slug);
     
-//     console.log("Slug received:", slug);
-    
-//     if (!slug || typeof slug !== 'string' || slug.trim().length === 0) {
-//       return NextResponse.json({ 
-//         success: false, 
-//         error: "Invalid slug parameter",
-//         debug: { receivedSlug: slug, type: typeof slug }
-//       }, { 
-//         status: 400,
-//         headers: corsHeaders
-//       });
-//     }
-    
-//     const decodedSlug = decodeURIComponent(slug.trim());
-//     console.log("Searching for product with slug:", decodedSlug);
-    
-//     const product = await Product.findOne({ slug: decodedSlug });
-//     console.log("Product found:", !!product);
-    
-//     if (!product) {
-//       return NextResponse.json({ 
-//         success: false, 
-//         error: "Product not found",
-//         debug: { searchedSlug: decodedSlug }
-//       }, { 
-//         status: 404,
-//         headers: corsHeaders
-//       });
+//     if (!slug || typeof slug !== 'string') {
+//       console.error("❌ Invalid slug");
+//       return NextResponse.json(
+//         { success: false, error: "Invalid slug parameter" },
+//         { status: 400, headers }
+//       );
 //     }
 
-//     return NextResponse.json({ 
-//       success: true, 
-//       product 
-//     }, {
-//       headers: corsHeaders
-//     });
+//     console.log("Connecting to database...");
+//     await dbConnect();
+//     console.log("✅ Database connected");
+
+//     console.log("Searching for product with slug:", slug);
+//     const product = await Product.findOne({ slug: slug.toLowerCase() });
+//     console.log("Database query result:", !!product);
+    
+//     if (!product) {
+//       console.log("❌ Product not found");
+//       return NextResponse.json(
+//         { success: false, error: "Product not found" },
+//         { status: 404, headers }
+//       );
+//     }
+
+//     console.log("✅ Product found, returning data");
+//     console.log("=== API ROUTE DEBUG END ===");
+    
+//     return NextResponse.json(
+//       { success: true, product },
+//       { status: 200, headers }
+//     );
     
 //   } catch (error) {
-//     console.error("API Error:", error);
-//     return NextResponse.json({
-//       success: false,
-//       error: error instanceof Error ? error.message : "Internal server error"
-//     }, { 
-//       status: 500,
-//       headers: corsHeaders
-//     });
+//     console.error("❌ API Route Error:", error);
+//     console.error("Error type:", error instanceof Error ? error.constructor.name : typeof error);
+    
+//     if (error instanceof Error) {
+//       console.error("Error message:", error.message);
+//       console.error("Error stack:", error.stack);
+//     }
+    
+//     return NextResponse.json(
+//       { 
+//         success: false, 
+//         error: "Internal server error",
+//         details: error instanceof Error ? error.message : "Unknown error"
+//       },
+//       { status: 500, headers }
+//     );
 //   }
 // }
 
-// // Handle OPTIONS requests for CORS
-// export async function OPTIONS(req: Request) {
+// // Handle preflight requests
+// export async function OPTIONS(request: NextRequest) {
 //   return new NextResponse(null, {
 //     status: 200,
 //     headers: {
@@ -469,3 +376,79 @@ export async function OPTIONS(request: NextRequest) {
 //     },
 //   });
 // }
+
+
+
+
+
+import { NextRequest, NextResponse } from "next/server";
+import { dbConnect } from "@/utils/dbconnect";
+import Product from "@/models/product";
+
+// Helper: CORS headers
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*", // Change to your domain in production!
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Content-Type": "application/json",
+};
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
+  // Optional: Simple API key authentication
+  // const apiKey = request.headers.get("x-api-key");
+  // if (apiKey !== process.env.API_KEY) {
+  //   return NextResponse.json(
+  //     { success: false, error: "Unauthorized" },
+  //     { status: 401, headers: corsHeaders }
+  //   );
+  // }
+
+  try {
+    // Validate slug param
+    const slug = params?.slug;
+    if (!slug || typeof slug !== "string") {
+      return NextResponse.json(
+        { success: false, error: "Invalid slug parameter" },
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
+    // Connect to database
+    await dbConnect();
+
+    // Find product by slug (case-insensitive)
+    const product = await Product.findOne({ slug: slug.toLowerCase() });
+    if (!product) {
+      return NextResponse.json(
+        { success: false, error: "Product not found" },
+        { status: 404, headers: corsHeaders }
+      );
+    }
+
+    // Success
+    return NextResponse.json(
+      { success: true, product },
+      { status: 200, headers: corsHeaders }
+    );
+  } catch (error: any) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Internal server error",
+        details: error?.message || "Unknown error",
+      },
+      { status: 500, headers: corsHeaders }
+    );
+  }
+}
+
+// Handle CORS preflight
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: corsHeaders,
+  });
+}
