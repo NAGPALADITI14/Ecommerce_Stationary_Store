@@ -36,7 +36,7 @@ const ProductList: React.FC<ProductListProps> = ({ type }) => {
         }
 
         const rawData = await response.json();
-        console.log("Raw product data:", rawData); // Debug log
+        console.log("Raw product data:", rawData); 
         
         const data: IProduct[] = Array.isArray(rawData.products)
           ? rawData.products
@@ -44,8 +44,8 @@ const ProductList: React.FC<ProductListProps> = ({ type }) => {
           ? rawData
           : Object.values(rawData.products || {});
 
-        console.log("Processed product data:", data); // Debug log
-        console.log("Category filter:", categoryname); // Debug log
+        console.log("Processed product data:", data); 
+        console.log("Category filter:", categoryname); 
 
         let filteredProducts: IProduct[] = [];
 
@@ -53,10 +53,10 @@ const ProductList: React.FC<ProductListProps> = ({ type }) => {
           filteredProducts = data.filter((product) => {
             const productCategory = product.category?.toLowerCase()?.trim();
             const searchCategory = categoryname.toLowerCase().trim();
-            console.log(`Comparing: "${productCategory}" === "${searchCategory}"`); // Debug log
+            console.log(`Comparing: "${productCategory}" === "${searchCategory}"`); 
             return productCategory === searchCategory;
           });
-          console.log("Filtered products for category:", filteredProducts); // Debug log
+          console.log("Filtered products for category:", filteredProducts); 
         } else if (type === "latest") {
           filteredProducts = data.filter((product) => product.isLatest);
         } else if (type === "featured") {
